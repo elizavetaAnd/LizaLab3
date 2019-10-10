@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LizaLab3
 {
-    //объявлю класс Range (диапазон) 
+    //объявление класса Range (диапазон) 
     public class Range
     {
-        //инкапсулируем
+        //инкапсуляция
         private readonly int _min;
         private readonly int _max;
 
@@ -21,14 +21,14 @@ namespace LizaLab3
         }
         public Range(int min, int max) //принимает два значения: нижнюю и верхнюю границу
         {
-            //если минимум больше максимума - выдаем ошибку
+            //если минимум больше максимума - ошибка
             if (min > max)
                 throw new ArgumentException();
             _min = min;
             _max = max;
         }
 
-        //принимает значение, возращает результат, находится ли число в заданном диапазоне
+        //принимает значение, возвращает результат, находится ли число в заданном диапазоне
         public bool inRange(int current)
         {
             bool result = current >= _min && current <= _max;
@@ -38,11 +38,11 @@ namespace LizaLab3
 
     class Counter
     {
-        //объявляем и инапсулируем переменные типа Range (_range) и типа _int (_current)
+        //объявляем и инапсулируем переменные типа Range и типа _int
         private Range _range;
         private int _current;
 
-        //тут будем хранить ошибку
+        //тут хранится ошибка
         private bool _error = false;
 
         //конструктор класса, задаем значения по умолчанию
@@ -51,11 +51,10 @@ namespace LizaLab3
 
             //по умолчанию диапазон от 0 до 15
             _range = new Range(0, 15);
-            ///и текущая переменная = 0
+            /// текущая переменная = 0
             _current = 0;
         }
 
-        //создадим перегрузки
 
         //перегрузка примет два параметра - число и диапазон
         public Counter(int current, Range range)
@@ -93,14 +92,14 @@ namespace LizaLab3
             int value = _current + 1;
             setValue(value);
         }
-        //Уменьшаем единицу
+        //Уменьшаем на единицу
         public void Decrement()
         {
             int value = _current - 1;
             setValue(value);
         }
 
-        //опишем метод setValue, принимает value, которое нужно установить в _current
+        //Метод setValue.Принимает value, которое нужно установить в _current
 
     
         private void setValue(int value)
